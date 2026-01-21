@@ -66,9 +66,8 @@ export function Registro() {
         });
 
         if (resultado.exito) {
-            navigate('/login', {
-                state: { mensaje: '¡Cuenta creada con éxito! Ingresa tus datos.' }
-            });
+            // Usar replace para evitar problemas de DOM con animaciones
+            window.location.href = '/login?registrado=1';
         } else {
             setErrores({ general: resultado.error || 'Error al registrar usuario' });
         }
