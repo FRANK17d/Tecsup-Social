@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { motion } from 'framer-motion';
-import { IoRocket, IoPeople } from 'react-icons/io5';
 import Input from '../componentes/ui/Input.jsx';
 import Boton from '../componentes/ui/Boton.jsx';
 import CarruselAutenticacion from '../componentes/compartidos/CarruselAutenticacion.jsx';
@@ -66,8 +65,11 @@ export function Registro() {
         });
 
         if (resultado.exito) {
-            // Usar replace para evitar problemas de DOM con animaciones
-            window.location.href = '/login?registrado=1';
+            setTimeout(() => {
+                navigate('/login', {
+                    state: { mensaje: '¡Cuenta creada con éxito!' }
+                });
+            }, 100);
         } else {
             setErrores({ general: resultado.error || 'Error al registrar usuario' });
         }
