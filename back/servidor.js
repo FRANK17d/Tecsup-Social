@@ -21,7 +21,11 @@ const app = express();
 
 // CORS - Permitir peticiones del frontend
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:3000'],
+    origin: [
+        'http://localhost:5173',
+        'http://localhost:3000',
+        process.env.FRONTEND_URL // URL de producción (Vercel)
+    ].filter(Boolean),
     credentials: true,
 }));
 

@@ -14,7 +14,7 @@ export const configuracion = {
 
     // Servidor
     servidor: {
-        puerto: parseInt(process.env.PUERTO, 10) || 3001,
+        puerto: parseInt(process.env.PORT || process.env.PUERTO, 10) || 3001,
         entorno: process.env.NODE_ENV || 'development',
     },
 

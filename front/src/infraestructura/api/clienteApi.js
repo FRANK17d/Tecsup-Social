@@ -4,7 +4,7 @@
  * Maneja las peticiones HTTP al backend.
  */
 
-const URL_BASE = 'http://localhost:3001/api';
+const URL_BASE = import.meta.env.VITE_API_URL;
 
 /**
  * Obtiene el token almacenado
