@@ -200,12 +200,25 @@ export const servicioEmail = {
         };
 
         try {
+            // Verificar configuración antes de enviar
+            console.log('📧 Intentando enviar email a:', email);
+            console.log('📧 Config:', {
+                host: process.env.EMAIL_HOST,
+                user: process.env.EMAIL_USER ? 'configurado' : 'NO CONFIGURADO',
+                pass: process.env.EMAIL_PASS ? 'configurado' : 'NO CONFIGURADO',
+            });
+
             const info = await transporter.sendMail(mailOptions);
             console.log('📧 Email de recuperación enviado:', info.messageId);
             return { exito: true, messageId: info.messageId };
         } catch (error) {
-            console.error('❌ Error enviando email:', error);
-            throw new Error('No se pudo enviar el correo de recuperación');
+            console.error('❌ Error enviando email:', {
+                message: error.message,
+                code: error.code,
+                command: error.command,
+                responseCode: error.responseCode,
+            });
+            throw new Error(`Error al enviar correo: ${error.message}`);
         }
     },
 
