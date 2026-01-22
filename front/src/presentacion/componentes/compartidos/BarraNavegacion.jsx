@@ -19,7 +19,7 @@ export function BarraNavegacion() {
     return (
         <nav className="bg-[#0c1014] border-b border-[#262626] sticky top-0 z-50">
             <div className="w-full px-4">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-20 relative">
                     {/* Logo y Buscador */}
                     <div className="flex items-center gap-2">
                         <Link to="/" className="flex-shrink-0">
@@ -44,31 +44,31 @@ export function BarraNavegacion() {
                     </div>
 
                     {/* Navegación central con estilo pill */}
-                    <div className="hidden md:flex items-center bg-[#121212] p-1.5 rounded-full border border-[#262626]">
+                    <div className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2 bg-[#171b21] p-1.5 rounded-full border border-[#262626] gap-1">
                         <Link
                             to="/"
-                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
+                            className="flex items-center gap-3 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
                         >
                             <IoHome className="w-5 h-5" />
                             Inicio
                         </Link>
                         <Link
                             to="/companeros"
-                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
+                            className="flex items-center gap-3 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
                         >
                             <IoPeople className="w-5 h-5" />
                             Compañeros
                         </Link>
                         <Link
                             to="/reels"
-                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
+                            className="flex items-center gap-3 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
                         >
                             <IoVideocam className="w-5 h-5" />
                             Reels
                         </Link>
                         <Link
                             to="/grupos"
-                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
+                            className="flex items-center gap-3 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
                         >
                             <IoGrid className="w-5 h-5" />
                             Grupos

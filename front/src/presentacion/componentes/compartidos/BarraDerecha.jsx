@@ -4,7 +4,6 @@ import { IoSearch, IoEllipsisHorizontal } from 'react-icons/io5';
 
 export function BarraDerecha() {
     const contactos = [
-        { id: 1, nombre: 'Meta AI', avatar: null, verificado: true, extra: 'meta-ai' },
         { id: 2, nombre: 'Francismar Bandres', avatar: null, online: true },
         { id: 3, nombre: 'Carlos Castro', avatar: null, online: true },
         { id: 4, nombre: 'Alexandra Leiva', avatar: null, online: false },
