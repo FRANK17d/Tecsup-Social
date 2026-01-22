@@ -12,7 +12,42 @@ input:-webkit-autofill:active {
 }
 
 /* Fix floating label overlap with autofill */
-input:-webkit-autofill + label {
+input:-webkit-autofill+label {
     transform: translateY(-0.25rem) scale(0.65) !important;
-    color: #9ca3af; /* text-gray-400 equivalent */
+    color: #9ca3af;
+    /* text-gray-400 equivalent */
+}
+
+/* Scrollbar Premium Estilizado (Tipo Mac/Spotify) */
+.scrollbar-tecsup {
+    scrollbar-width: thin;
+    scrollbar-color: #2a2c2e transparent;
+    /* Thumb Gray-600, Track Transparent */
+}
+
+/* Webkit (Chrome, Edge, Safari) */
+.scrollbar-tecsup::-webkit-scrollbar {
+    width: 6px;
+    /* Más fino */
+}
+
+.scrollbar-tecsup::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: 4px;
+    /* Margen arriba y abajo */
+}
+
+.scrollbar-tecsup::-webkit-scrollbar-thumb {
+    background-color: #15181d;
+    /* Gray-700 */
+    border-radius: 9999px;
+    /* Completamente redondo */
+    border: 1px solid transparent;
+    /* Espacio para simular padding si fuese necesario */
+    background-clip: content-box;
+}
+
+.scrollbar-tecsup:hover::-webkit-scrollbar-thumb {
+    background-color: #16181b;
+    /* Gray-500 al pasar el mouse */
 }

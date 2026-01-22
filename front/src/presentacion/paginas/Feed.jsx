@@ -1,10 +1,7 @@
-/**
- * Página Feed - Página principal
- */
-
 import { useEffect } from 'react';
 import BarraNavegacion from '../componentes/compartidos/BarraNavegacion.jsx';
 import BarraLateral from '../componentes/compartidos/BarraLateral.jsx';
+import BarraDerecha from '../componentes/compartidos/BarraDerecha.jsx';
 import FormularioPublicacion from '../componentes/publicacion/FormularioPublicacion.jsx';
 import TarjetaPublicacion from '../componentes/publicacion/TarjetaPublicacion.jsx';
 import CarruselHistorias from '../componentes/historias/CarruselHistorias.jsx';
@@ -31,13 +28,13 @@ export function Feed() {
         <div className="min-h-screen bg-[#0c1014] text-white">
             <BarraNavegacion />
 
-            <main className="max-w-5xl mx-auto px-4 py-6">
-                <div className="flex gap-6">
-                    {/* Barra lateral */}
+            <div className="w-full">
+                <main className="flex justify-center w-full px-2 pt-4 relative">
+                    {/* Barra lateral Izquierda - Menú + Sugerencias */}
                     <BarraLateral />
 
                     {/* Contenido principal */}
-                    <div className="flex-1">
+                    <div className="flex-1 max-w-[680px] w-full mx-auto pb-4">
                         {/* Formulario para nueva publicación */}
                         <FormularioPublicacion onPublicar={crearPublicacion} />
 
@@ -84,8 +81,11 @@ export function Feed() {
                             ))
                         )}
                     </div>
-                </div>
-            </main>
+
+                    {/* Barra lateral Derecha - Contactos */}
+                    <BarraDerecha />
+                </main>
+            </div>
         </div>
     );
 }

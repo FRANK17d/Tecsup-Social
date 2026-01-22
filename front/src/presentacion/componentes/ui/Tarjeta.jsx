@@ -5,7 +5,7 @@
 export function Tarjeta({ children, className = '', onClick }) {
     return (
         <div
-            className={`bg-[#0c1014] rounded-2xl border border-[#262626] overflow-hidden transition-all duration-300 ${className}`}
+            className={`bg-[#0f141a] rounded-xl shadow-md overflow-hidden transition-all duration-300 ${className}`}
             onClick={onClick}
         >
             {children}

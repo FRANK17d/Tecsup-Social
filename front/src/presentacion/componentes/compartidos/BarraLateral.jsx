@@ -9,69 +9,78 @@ import { useAutenticacion } from '../../contextos/ContextoAutenticacion.jsx';
 
 export function BarraLateral() {
     const { usuario } = useAutenticacion();
-
     return (
-        <aside className="w-72 hidden lg:block sticky top-24 h-fit space-y-6">
-            {/* Tarjeta de perfil */}
-            <Tarjeta className="overflow-visible">
-                <div className="h-24 bg-[#0c1014] rounded-t-2xl relative overflow-hidden border-b border-[#262626]">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#262626]/20 rounded-full -translate-y-16 translate-x-16 blur-2xl"></div>
-                </div>
-                <TarjetaCuerpo className="-mt-12 text-center relative z-10 pb-6">
+        <aside className="fixed left-0 top-22 z-40 w-80 h-[calc(100vh-5rem)] hidden lg:block overflow-y-auto scrollbar-hide p-2 bg-[#0c1014]">
+            {/* Perfil Mini */}
+            <div className="flex items-center justify-between mb-6 px-2">
+                <Link to="/perfil" className="flex items-center gap-3 hover:bg-[#1e1e1e] p-2 -ml-2 rounded-lg transition-colors group w-full">
                     <Avatar
                         src={usuario?.avatar}
-                        nombre={usuario?.nombre || ''}
-                        tamano="xl"
-                        className="mx-auto border-4 border-white shadow-lg mx-auto"
+                        nombre={usuario?.nombre || 'Usuario'}
+                        tamano="md"
                     />
-                    <h3 className="mt-4 font-bold text-lg text-white line-clamp-1">
-                        {usuario?.nombre}
-                    </h3>
-                    <p className="text-sm text-white mb-4 flex items-center justify-center gap-1">
-                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                        Estudiante
-                    </p>
-                    <Link
-                        to="/perfil"
-                        className="block w-full py-2.5 text-center text-sm font-medium text-white bg-[#262626] hover:bg-[#363636] rounded-xl transition-colors"
-                    >
-                        Ver mi perfil
-                    </Link>
-                </TarjetaCuerpo>
-            </Tarjeta>
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-white truncate group-hover:text-gray-300 transition-colors">
+                            {usuario?.nombre || 'Nombre Usuario'}
+                        </p>
+                        <p className="text-sm text-[#A8A8A8] truncate">
+                            {usuario?.rol || 'Nombre Usuario'}
+                        </p>
+                    </div>
+                    <span className="text-xs font-semibold text-[#009EE3] hover:text-white transition-colors cursor-pointer">
+                        Ver Perfil
+                    </span>
+                </Link>
+            </div>
 
-            {/* Enlaces menu */}
-            <Tarjeta>
-                <TarjetaCuerpo className="p-2 space-y-1">
-                    <p className="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider">
-                        Menú Principal
-                    </p>
+            {/* Sugerencias Header */}
+            <div className="flex items-center justify-between mb-4 px-2">
+                <span className="text-sm font-semibold text-[#A8A8A8]">
+                    Sugerencias para ti
+                </span>
+                <Link to="/compañeros" className="text-xs font-semibold text-white hover:text-gray-300 transition-colors">
+                    Ver todo
+                </Link>
+            </div>
 
-                    <Link
-                        to="/"
-                        className="flex items-center gap-3 px-4 py-3 text-white hover:bg-[#121212] hover:text-white rounded-xl transition-all group"
-                    >
-                        <div className="w-8 h-8 rounded-lg bg-[#262626] text-white flex items-center justify-center group-hover:bg-[#363636] transition-colors">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+            {/* Lista de Sugerencias */}
+            <div className="space-y-3">
+                {[
+                    { id: 1, user: 'santiagotorres8188', sub: 'Sugerencia para ti', avatar: null },
+                    { id: 2, user: 'azucena.luque.982', sub: 'diegxx.wz sigue esta cuenta', avatar: null },
+                    { id: 3, user: 'zuricreyna', sub: 'diegxx.wz sigue esta cuenta', avatar: null },
+                    { id: 4, user: 'yadiaaroni', sub: 'nani_xzc y 2 más siguen esta...', avatar: null },
+                    { id: 5, user: 'francismar_bandres', sub: 'Sugerencia para ti', avatar: null },
+                    { id: 6, user: 'diegoaxelcastillo', sub: 'diegxx.wz sigue esta cuenta', avatar: null },
+                    { id: 7, user: 'diegoaxelcastillo', sub: 'diegxx.wz sigue esta cuenta', avatar: null },
+                    { id: 8, user: 'diegoaxelcastillo', sub: 'diegxx.wz sigue esta cuenta', avatar: null }
+                ].map((sugerencia) => (
+                    <div key={sugerencia.id} className="flex items-center justify-between px-2 py-1">
+                        <div className="flex items-center gap-3">
+                            <Avatar
+                                nombre={sugerencia.user}
+                                tamano="sm"
+                            />
+                            <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold text-white truncate hover:underline cursor-pointer">
+                                    {sugerencia.user}
+                                </p>
+                                <p className="text-xs text-[#A8A8A8] truncate max-w-[140px]" title={sugerencia.sub}>
+                                    {sugerencia.sub}
+                                </p>
+                            </div>
                         </div>
-                        <span className="font-medium">Publicaciones</span>
-                    </Link>
+                        <button className="text-xs font-semibold text-[#009EE3] hover:text-white transition-colors">
+                            Añadir
+                        </button>
+                    </div>
+                ))}
+            </div>
 
-                    <Link
-                        to="/compañeros"
-                        className="flex items-center gap-3 px-4 py-3 text-white hover:bg-[#121212] hover:text-white rounded-xl transition-all group"
-                    >
-                        <div className="w-8 h-8 rounded-lg bg-[#262626] text-white flex items-center justify-center group-hover:bg-[#363636] transition-colors">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                        </div>
-                        <span className="font-medium">Compañeros</span>
-                    </Link>
-                </TarjetaCuerpo>
-            </Tarjeta>
-
-            <div className="text-center">
-                <p className="text-xs text-white">
-                    © {new Date().getFullYear()} Tecsup Social v1.0
+            {/* Footer Links */}
+            <div className="mt-8 px-2 text-xs text-[#A8A8A8] space-y-2">
+                <p className="mt-4 uppercase">
+                    © {new Date().getFullYear()} TECSUP SOCIAL
                 </p>
             </div>
         </aside>
