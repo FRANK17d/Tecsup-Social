@@ -17,9 +17,9 @@ export function Boton({
 
     const variantes = {
         primario: 'bg-[#009EE3] text-white hover:bg-[#0082BC] shadow-lg shadow-[#009EE3]/30 hover:-translate-y-0.5 focus:ring-[#009EE3]',
-        secundario: 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300 focus:ring-gray-200',
+        secundario: 'bg-[#121212] text-white border border-[#262626] hover:bg-[#262626] hover:border-[#363636] focus:ring-[#262626]',
         peligro: 'bg-red-500 text-white hover:bg-red-600 shadow-lg shadow-red-500/30 hover:-translate-y-0.5 focus:ring-red-500',
-        fantasma: 'bg-transparent text-gray-600 hover:bg-gray-100 focus:ring-gray-200',
+        fantasma: 'bg-transparent text-white hover:bg-[#121212] focus:ring-[#262626]',
     };
 
     const tamanos = {
@@ -42,7 +42,7 @@ export function Boton({
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
             )}
-            {children}
+            <span>{children}</span>
         </button>
     );
 }

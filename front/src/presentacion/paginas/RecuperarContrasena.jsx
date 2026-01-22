@@ -56,7 +56,7 @@ export function RecuperarContrasena() {
 
                     {!enviado ? (
                         <>
-                            <p className="text-sm text-gray-400 text-center mb-6">
+                            <p className="text-sm text-white text-center mb-6">
                                 Ingresa tu correo electrónico y te enviaremos un enlace para recuperar el acceso a tu cuenta.
                             </p>
 
@@ -67,7 +67,7 @@ export function RecuperarContrasena() {
                                     valor={email}
                                     placeholder="Correo institucional"
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800"
+                                    className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-white"
                                     requerido
                                 />
 
@@ -88,13 +88,13 @@ export function RecuperarContrasena() {
 
                             <div className="flex items-center my-6">
                                 <div className="flex-1 h-px bg-gray-800"></div>
-                                <span className="px-4 text-xs font-semibold text-gray-500 uppercase">O</span>
+                                <span className="px-4 text-xs font-semibold text-white uppercase">O</span>
                                 <div className="flex-1 h-px bg-gray-800"></div>
                             </div>
 
                             <Link
                                 to="/registro"
-                                className="block text-center text-sm text-white font-semibold hover:text-gray-200 cursor-pointer"
+                                className="block text-center text-sm text-white font-semibold hover:text-white cursor-pointer"
                             >
                                 Crear cuenta nueva
                             </Link>
@@ -109,7 +109,7 @@ export function RecuperarContrasena() {
                             <h2 className="text-lg font-semibold text-white mb-2">
                                 ¡Correo enviado!
                             </h2>
-                            <p className="text-sm text-gray-400 mb-6">
+                            <p className="text-sm text-white mb-6">
                                 Revisa tu bandeja de entrada (y spam) para encontrar el enlace de recuperación.
                             </p>
                             <Link
@@ -126,7 +126,7 @@ export function RecuperarContrasena() {
                 <div className="text-center mt-6">
                     <Link
                         to="/login"
-                        className="inline-flex items-center text-sm text-gray-400 hover:text-white cursor-pointer"
+                        className="inline-flex items-center text-sm text-white hover:text-white cursor-pointer"
                     >
                         <IoArrowBack className="mr-2" />
                         Volver al inicio de sesión

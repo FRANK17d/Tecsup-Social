@@ -30,10 +30,10 @@ export function Input({
                     onChange={onChange}
                     className={`
                         block w-full px-5 pt-6 pb-2 rounded-[3px] 
-                        text-sm text-white bg-[#25292e] 
-                        border border-gray-800
-                        appearance-none focus:outline-none focus:ring-0 focus:border-gray-800 peer
-                        disabled:bg-gray-800 disabled:cursor-not-allowed
+                        text-sm text-white bg-[#121212] 
+                        border border-[#363636]
+                        appearance-none focus:outline-none focus:ring-0 focus:border-[#737373] peer
+                        disabled:bg-[#363636] disabled:cursor-not-allowed
                         ${error ? 'border-red-500' : ''}
                         ${className}
                     `}
@@ -42,10 +42,11 @@ export function Input({
                 <label
                     htmlFor={nombre}
                     className={`
-                        absolute text-sm text-gray-500 duration-300 transform 
-                        -translate-y-3 scale-75 top-4 z-10 origin-left left-5
-                        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3
-                        peer-focus:text-gray-400
+                        absolute text-xs text-white duration-300 transform 
+                        -translate-y-3 scale-100 top-4 z-10 origin-left left-5
+                        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-sm
+                        peer-focus:scale-100 peer-focus:-translate-y-3 peer-focus:text-xs
+                        peer-focus:text-white
                         pointer-events-none
                     `}
                 >

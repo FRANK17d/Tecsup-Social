@@ -5,7 +5,7 @@
 export function Tarjeta({ children, className = '', onClick }) {
     return (
         <div
-            className={`bg-white rounded-2xl shadow-xl shadow-gray-100/50 border border-gray-100 overflow-hidden transition-all duration-300 ${className}`}
+            className={`bg-[#0c1014] rounded-2xl border border-[#262626] overflow-hidden transition-all duration-300 ${className}`}
             onClick={onClick}
         >
             {children}
@@ -15,7 +15,7 @@ export function Tarjeta({ children, className = '', onClick }) {
 
 export function TarjetaCabecera({ children, className = '' }) {
     return (
-        <div className={`px-6 py-4 border-b border-gray-50 ${className}`}>
+        <div className={`px-6 py-4 border-b border-[#262626] ${className}`}>
             {children}
         </div>
     );
@@ -31,7 +31,7 @@ export function TarjetaCuerpo({ children, className = '' }) {
 
 export function TarjetaPie({ children, className = '' }) {
     return (
-        <div className={`px-6 py-4 bg-gray-50/50 border-t border-gray-50 ${className}`}>
+        <div className={`px-6 py-4 bg-[#121212]/50 border-t border-[#262626] ${className}`}>
             {children}
         </div>
     );

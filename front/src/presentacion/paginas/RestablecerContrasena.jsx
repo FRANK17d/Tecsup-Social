@@ -72,7 +72,7 @@ export function RestablecerContrasena() {
                     <h1 className="text-xl font-semibold text-white mb-2">
                         Enlace inválido
                     </h1>
-                    <p className="text-sm text-gray-400 mb-6">
+                    <p className="text-sm text-white mb-6">
                         El enlace de recuperación no es válido o ha expirado.
                     </p>
                     <Link
@@ -108,7 +108,7 @@ export function RestablecerContrasena() {
 
                     {!exito ? (
                         <>
-                            <p className="text-sm text-gray-400 text-center mb-6">
+                            <p className="text-sm text-white text-center mb-6">
                                 Tu nueva contraseña debe ser diferente a la anterior.
                             </p>
 
@@ -158,7 +158,7 @@ export function RestablecerContrasena() {
                             <h2 className="text-lg font-semibold text-white mb-2">
                                 ¡Contraseña actualizada!
                             </h2>
-                            <p className="text-sm text-gray-400 mb-4">
+                            <p className="text-sm text-white mb-4">
                                 Serás redirigido al inicio de sesión...
                             </p>
                             <div className="animate-spin w-6 h-6 border-2 border-[#0095f6] border-t-transparent rounded-full mx-auto" />

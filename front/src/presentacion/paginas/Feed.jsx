@@ -7,6 +7,7 @@ import BarraNavegacion from '../componentes/compartidos/BarraNavegacion.jsx';
 import BarraLateral from '../componentes/compartidos/BarraLateral.jsx';
 import FormularioPublicacion from '../componentes/publicacion/FormularioPublicacion.jsx';
 import TarjetaPublicacion from '../componentes/publicacion/TarjetaPublicacion.jsx';
+import CarruselHistorias from '../componentes/historias/CarruselHistorias.jsx';
 import { usePublicaciones } from '../hooks/usePublicaciones.js';
 
 export function Feed() {
@@ -27,7 +28,7 @@ export function Feed() {
     }, [cargarPublicaciones]);
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-[#0c1014] text-white">
             <BarraNavegacion />
 
             <main className="max-w-5xl mx-auto px-4 py-6">
@@ -40,17 +41,20 @@ export function Feed() {
                         {/* Formulario para nueva publicación */}
                         <FormularioPublicacion onPublicar={crearPublicacion} />
 
+                        {/* Carrusel de Historias */}
+                        <CarruselHistorias />
+
                         {/* Estado de carga */}
                         {cargando && (
                             <div className="text-center py-8">
-                                <div className="inline-block w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
-                                <p className="mt-2 text-gray-500">Cargando publicaciones...</p>
+                                <div className="inline-block w-8 h-8 border-4 border-white/20 border-t-white rounded-full animate-spin" />
+                                <p className="mt-2 text-white">Cargando publicaciones...</p>
                             </div>
                         )}
 
                         {/* Error */}
                         {error && (
-                            <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg p-4 mb-4">
+                            <div className="bg-red-900/20 border border-red-900 text-red-500 rounded-lg p-4 mb-4">
                                 {error}
                             </div>
                         )}
@@ -58,13 +62,13 @@ export function Feed() {
                         {/* Lista de publicaciones */}
                         {!cargando && publicaciones.length === 0 ? (
                             <div className="text-center py-12">
-                                <svg className="w-16 h-16 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-16 h-16 mx-auto text-[#262626]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                                 </svg>
-                                <h3 className="mt-4 text-lg font-medium text-gray-900">
+                                <h3 className="mt-4 text-lg font-medium text-white">
                                     No hay publicaciones aún
                                 </h3>
-                                <p className="mt-2 text-gray-500">
+                                <p className="mt-2 text-white">
                                     ¡Sé el primero en compartir algo con tu aula!
                                 </p>
                             </div>

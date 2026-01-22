@@ -3,6 +3,7 @@
  */
 
 import { Link, useNavigate } from 'react-router-dom';
+import { IoHome, IoPeople, IoVideocam, IoGrid, IoSearch, IoChatbubbleEllipses, IoNotifications, IoChevronDown } from 'react-icons/io5';
 import Avatar from '../ui/Avatar.jsx';
 import { useAutenticacion } from '../../contextos/ContextoAutenticacion.jsx';
 
@@ -16,87 +17,118 @@ export function BarraNavegacion() {
     };
 
     return (
-        <nav className="bg-white shadow-lg shadow-gray-100/50 border-b border-gray-100 sticky top-0 z-50 backdrop-blur-lg bg-white/90">
-            <div className="max-w-6xl mx-auto px-4">
+        <nav className="bg-[#0c1014] border-b border-[#262626] sticky top-0 z-50">
+            <div className="w-full px-4">
                 <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
-                    <Link
-                        to="/"
-                        className="flex items-center gap-3 transition-opacity hover:opacity-80"
-                    >
-                        <img
-                            src="/logo-tecsup.png"
-                            alt="Tecsup"
-                            className="h-10 object-contain"
-                        />
-                    </Link>
+                    {/* Logo y Buscador */}
+                    <div className="flex items-center gap-2">
+                        <Link to="/" className="flex-shrink-0">
+                            {/* Icono circular tipo Facebook */}
+                            <img
+                                src="/logo-tecsup-icono.png"
+                                alt="Tecsup"
+                                className="w-10 h-10 object-contain"
+                            />
+                        </Link>
+
+                        <div className="relative hidden lg:block">
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <IoSearch className="text-[#B0B3B8] text-lg" />
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Buscar en Tecsup Social"
+                                className="bg-[#3A3B3C] border-none text-white text-[15px] rounded-full block w-[240px] pl-10 p-2.5 placeholder-[#B0B3B8] focus:ring-0 transition-all hover:bg-[#4E4F50]"
+                            />
+                        </div>
+                    </div>
 
                     {/* Navegación central con estilo pill */}
-                    <div className="hidden md:flex items-center bg-gray-100/50 p-1.5 rounded-full border border-gray-100">
+                    <div className="hidden md:flex items-center bg-[#121212] p-1.5 rounded-full border border-[#262626]">
                         <Link
                             to="/"
-                            className="flex items-center gap-2 px-5 py-2 rounded-full text-gray-600 hover:text-[#009EE3] hover:bg-white hover:shadow-sm transition-all text-sm font-medium"
+                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
                         >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                            </svg>
+                            <IoHome className="w-5 h-5" />
                             Inicio
                         </Link>
                         <Link
-                            to="/compañeros"
-                            className="flex items-center gap-2 px-5 py-2 rounded-full text-gray-600 hover:text-[#009EE3] hover:bg-white hover:shadow-sm transition-all text-sm font-medium"
+                            to="/companeros"
+                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
                         >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                            Comunidad
+                            <IoPeople className="w-5 h-5" />
+                            Compañeros
+                        </Link>
+                        <Link
+                            to="/reels"
+                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
+                        >
+                            <IoVideocam className="w-5 h-5" />
+                            Reels
+                        </Link>
+                        <Link
+                            to="/grupos"
+                            className="flex items-center gap-2 px-5 py-2 rounded-full text-white hover:text-white hover:bg-[#262626] transition-all text-sm font-medium"
+                        >
+                            <IoGrid className="w-5 h-5" />
+                            Grupos
                         </Link>
                     </div>
 
                     {/* Perfil y acciones */}
-                    <div className="flex items-center gap-4">
-                        <div className="relative group">
-                            <button className="flex items-center gap-3 pl-2 pr-1 py-1 rounded-full hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
-                                <span className="hidden md:block text-sm font-medium text-gray-700 text-right leading-tight">
-                                    <span className="block">{usuario?.nombre?.split(' ')[0]}</span>
-                                    <span className="text-xs text-gray-400 font-normal">Estudiante</span>
-                                </span>
+                    <div className="flex items-center gap-2">
+                        {/* Mensajes */}
+                        <button className="w-10 h-10 rounded-full bg-[#3A3B3C] flex items-center justify-center text-white hover:bg-[#4E4F50] transition-colors">
+                            <IoChatbubbleEllipses className="w-5 h-5" />
+                        </button>
+
+                        {/* Notificaciones */}
+                        <button className="w-10 h-10 rounded-full bg-[#3A3B3C] flex items-center justify-center text-white hover:bg-[#4E4F50] transition-colors">
+                            <IoNotifications className="w-5 h-5" />
+                        </button>
+
+                        {/* Perfil Dropdown */}
+                        <div className="relative group ml-1">
+                            <button className="relative block outline-none">
                                 <Avatar
                                     src={usuario?.avatar}
                                     nombre={usuario?.nombre || ''}
                                     tamano="md"
-                                    className="ring-2 ring-white shadow-md mx-0"
+                                    className="cursor-pointer transition-opacity hover:opacity-90"
                                 />
+                                <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-[#3A3B3C] rounded-full flex items-center justify-center border-2 border-[#18191A] text-white">
+                                    <IoChevronDown className="w-3 h-3" />
+                                </div>
                             </button>
 
                             {/* Dropdown flotante */}
-                            <div className="absolute right-0 top-full mt-4 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right">
+                            <div className="absolute right-0 top-full mt-2 w-56 bg-[#242526] rounded-lg shadow-xl border border-[#3E4042] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right z-50 overflow-hidden">
                                 <div className="p-2">
                                     <Link
                                         to="/perfil"
-                                        className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
+                                        className="flex items-center gap-3 px-3 py-2 text-white hover:bg-[#3A3B3C] rounded-md transition-colors"
                                     >
-                                        <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#009EE3]">
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-8 h-8 rounded-full bg-[#3A3B3C] flex items-center justify-center text-white">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <span className="block font-medium text-sm">Mi Perfil</span>
-                                            <span className="block text-xs text-gray-400">Ver y editar</span>
+                                            <span className="block font-medium text-[15px]">{usuario?.nombre}</span>
+                                            <span className="block text-xs text-[#B0B3B8]">Ver tu perfil</span>
                                         </div>
                                     </Link>
-                                    <div className="h-px bg-gray-100 my-1"></div>
+                                    <div className="h-px bg-[#3E4042] my-1 mx-2"></div>
                                     <button
                                         onClick={manejarCerrarSesion}
-                                        className="flex items-center gap-3 w-full px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl transition-colors"
+                                        className="flex items-center gap-3 w-full px-3 py-2 text-white hover:bg-[#3A3B3C] rounded-md transition-colors"
                                     >
-                                        <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500">
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-8 h-8 rounded-full bg-[#3A3B3C] flex items-center justify-center text-white">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                             </svg>
                                         </div>
-                                        <span className="font-medium text-sm">Cerrar Sesión</span>
+                                        <span className="font-medium text-[15px]">Cerrar Sesión</span>
                                     </button>
                                 </div>
                             </div>

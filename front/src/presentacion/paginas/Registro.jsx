@@ -97,7 +97,7 @@ export function Registro() {
                                 alt="Logo Tecsup"
                                 className="h-16 w-auto mx-auto mb-4 object-contain"
                             />
-                            <p className="text-gray-400 mt-2 text-sm font-medium text-center leading-5">
+                            <p className="text-white mt-2 text-sm font-medium text-center leading-5">
                                 Regístrate para ver fotos y videos de tus amigos.
                             </p>
                         </div>
@@ -117,7 +117,7 @@ export function Registro() {
                                 placeholder="Nombre y Apellido"
                                 error={errores.nombre}
                                 onChange={manejarCambio}
-                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-gray-500"
+                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-white"
                                 requerido
                             />
 
@@ -129,7 +129,7 @@ export function Registro() {
                                 placeholder="Correo institucional"
                                 error={errores.email}
                                 onChange={manejarCambio}
-                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-gray-500"
+                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-white"
                                 requerido
                             />
 
@@ -141,7 +141,7 @@ export function Registro() {
                                 placeholder="Contraseña"
                                 error={errores.contrasena}
                                 onChange={manejarCambio}
-                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-gray-500"
+                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-white"
                                 requerido
                             />
 
@@ -153,11 +153,11 @@ export function Registro() {
                                 placeholder="Confirmar contraseña"
                                 error={errores.confirmarContrasena}
                                 onChange={manejarCambio}
-                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-gray-500"
+                                className="bg-[#25292e] border-gray-800 text-sm text-white rounded-[3px] focus:ring-0 focus:border-gray-800 placeholder:text-white"
                                 requerido
                             />
 
-                            <p className="text-xs text-gray-500 text-center my-4">
+                            <p className="text-xs text-white text-center my-4">
                                 Al registrarte, aceptas nuestras Condiciones, la Política de privacidad y la Política de cookies.
                             </p>
 
@@ -172,7 +172,7 @@ export function Registro() {
 
                             <div className="flex items-center my-4">
                                 <div className="flex-1 h-px bg-gray-800"></div>
-                                <span className="px-4 text-xs font-semibold text-gray-500 uppercase">O</span>
+                                <span className="px-4 text-xs font-semibold text-white uppercase">O</span>
                                 <div className="flex-1 h-px bg-gray-800"></div>
                             </div>
 
