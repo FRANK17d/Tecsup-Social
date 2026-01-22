@@ -128,14 +128,14 @@ export function TarjetaPublicacion({
             <div className="px-5 py-3 flex items-center justify-between text-[#B0B3B8] text-sm">
                 <div className="flex items-center gap-1.5 cursor-pointer hover:underline">
                     {/* Icono de reacción apilada (Me gusta - Azul) */}
-                    <div className="bg-gradient-to-br from-[#1877F2] to-[#1866D2] p-1 rounded-full text-white w-5 h-5 flex items-center justify-center z-10 border-2 border-[#1e1e1e]">
+                    <div className="bg-linear-to-br from-[#1877F2] to-[#1866D2] p-1 rounded-full text-white w-5 h-5 flex items-center justify-center z-10 border-2 border-[#1e1e1e]">
                         <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
                             <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
                         </svg>
                     </div>
                     {/* Icono de reacción apilada (Corazón - Rojo) - Opcional, solo si hay más reacciones */}
                     {publicacion.obtenerTotalMeGusta() > 0 && (
-                        <div className="bg-gradient-to-br from-[#FB5D78] to-[#F13359] p-1 rounded-full text-white w-5 h-5 flex items-center justify-center -ml-2 border-2 border-[#1e1e1e]">
+                        <div className="bg-linear-to-br from-[#FB5D78] to-[#F13359] p-1 rounded-full text-white w-5 h-5 flex items-center justify-center -ml-2 border-2 border-[#1e1e1e]">
                             <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
                                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                             </svg>
